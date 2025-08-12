@@ -4,6 +4,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import dev.sara.controllers.MomentController;
+import dev.sara.singletons.MomentControllerSingleton;
+
 public class MomentPostView extends View {
     
     private static MomentController CONTROLLER = MomentControllerSingleton.getInstance();
