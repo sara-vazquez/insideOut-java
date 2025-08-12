@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 public class Moment {
 
+    private static int nextId = 1;
+
     private int id;
     private String momentTitle;
     private String momentDescription;
@@ -14,7 +16,7 @@ public class Moment {
     private LocalDateTime modDate;
 
     public Moment(String momentTitle, String momentDescription, Emotion emotion, LocalDate momentDate) {
-        this.id = id;
+        this.id = nextId++;
         this.momentTitle = momentTitle;
         this.momentDescription = momentDescription;
         this.emotion = emotion;
