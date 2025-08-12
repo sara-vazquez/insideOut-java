@@ -13,7 +13,7 @@ public class MomentPostView extends View {
     
     private static MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
-    public static void printStoreMenu() {
+    public static  Moment createMoment() {
         System.out.println("Ingrese el título:");
         String momentTitle = SCANNER.next();
        
@@ -54,7 +54,7 @@ public class MomentPostView extends View {
         System.out.print(text);
 
         int emotionNumber = SCANNER.nextInt();
-        SCANNER.next();
+        SCANNER.nextLine();
 
         Emotion emotion = Emotion.getEmotionByNumber(emotionNumber);
         Moment newMoment = new Moment(momentTitle, momentDescription, emotion, momentDate);
@@ -68,6 +68,6 @@ public class MomentPostView extends View {
                           newMoment.getMomentDescription(),
                           newMoment.getEmotion().name());
 
-                       // return newMoment;
+        return newMoment;
     }
 }

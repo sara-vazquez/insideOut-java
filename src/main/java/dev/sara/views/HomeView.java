@@ -1,4 +1,7 @@
 package dev.sara.views;
+
+import dev.sara.models.Moment;
+
 public class HomeView extends View {
 
     public static void printMenu() {
@@ -20,7 +23,9 @@ public class HomeView extends View {
 
         int option = SCANNER.nextInt();
 
-       if (option == 1) MomentPostView.printStoreMenu();
+       if (option == 1) {
+        Moment newMoment = MomentPostView.createMoment();
+       }
     }
     
 }

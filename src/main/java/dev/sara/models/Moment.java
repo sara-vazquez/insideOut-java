@@ -81,6 +81,5 @@ public class Moment {
     public void setModDate(LocalDateTime modDate) {
         this.modDate = modDate;
     }
-
      
 }
