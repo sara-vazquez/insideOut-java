@@ -22,4 +22,13 @@ public enum Emotion {
         return emotionNumber;
     }
 
+    public static Emotion getEmotionByNumber(int number) {
+        for (Emotion emotion : values()) {
+            if (emotion.getEmotionNumber() == number) {
+                return emotion;
+            }
+        }
+        return null;
+    }
+
 }
