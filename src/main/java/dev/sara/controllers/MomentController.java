@@ -1,8 +1,11 @@
 package dev.sara.controllers;
 
-import dev.sara.models.*;
-import dev.sara.repositories.*;
-import dev.sara.singletons.*;
+import dev.sara.dtos.MomentDTO;
+import dev.sara.mappers.MomentMapper;
+import dev.sara.models.Moment;
+import dev.sara.repositories.MomentRepository;
+import dev.sara.singletons.MomentRepositorySingleton;
+
 
 public class MomentController {
     private MomentRepository repository;
