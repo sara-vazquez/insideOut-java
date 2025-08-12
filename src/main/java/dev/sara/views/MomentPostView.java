@@ -15,21 +15,28 @@ public class MomentPostView extends View {
         System.out.println("Ingrese el título:");
         String momentTitle = SCANNER.next();
        
-        System.out.println("Ingresa la fecha (dd/mm/year):");
-        String momentDate = SCANNER.next();        
-        SimpleDateFormat inputFormat = new SimpleDateFormat("dd-MM-yyyy");
-        try {
-            Date inputDate = inputFormat.parse(momentDate);
-            System.out.println("String to Date: " + inputDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-       
+        Date inputDate = null;
+        SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
+        inputFormat.setLenient(false); //validación estricta de la fecha
+
+        do { 
+            System.out.println("Ingresa la fecha (dd/mm/year):");
+            String momentDate = SCANNER.next();       
+            
+            try {
+                inputDate = inputFormat.parse(momentDate);
+            } catch (ParseException e) {
+                System.out.println("⚠️ Formato de fecha inválido. Por favor, use el formato dd/MM/yyyy.");            }
+        } while (inputDate == null);
+
+        System.out.println("Fecha validada: " + inputDate);
+        
         System.out.println("Ingrese la descripción:");
         String momentDescription = SCANNER.next();
 
         String text = """
                 Selecciona una emoción:
+                
                 1. Alegría
                 2. Tristeza
                 3. Ira
@@ -40,6 +47,7 @@ public class MomentPostView extends View {
                 8. Vergüenza
                 9. Aburrimiento
                 10. Nostalgia
+                
                 Ingrese su opción:
                 """;
         
@@ -47,6 +55,6 @@ public class MomentPostView extends View {
 
         int emotionNumber = SCANNER.nextInt();
         
-       
+       SCANNER.next();
     }
 }
