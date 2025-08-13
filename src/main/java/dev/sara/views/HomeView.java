@@ -15,7 +15,6 @@ public class HomeView extends View {
                 4. Filtrar los momentos
                 5. Salir
                 ----------------------
-                
                 Seleccione una opción:
                 """;
         
