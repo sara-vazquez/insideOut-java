@@ -1,8 +1,8 @@
 package dev.sara.repositories;
 
-import dev.sara.db.*;
-import dev.sara.contracts.*;
-import dev.sara.models.*;
+import dev.sara.contracts.InterfaceDatabase;
+import dev.sara.db.DiaryDatabase;
+import dev.sara.models.Moment;
 
 public class MomentRepository {
 
