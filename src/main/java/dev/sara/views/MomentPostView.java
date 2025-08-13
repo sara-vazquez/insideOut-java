@@ -20,7 +20,7 @@ public class MomentPostView extends View {
         LocalDate momentDate = null;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         do { 
-            System.out.println("Ingrese la fecha (dd/mm/year):");
+            System.out.println("Ingresa la fecha (dd/mm/year):");
             String momentDateStr = SCANNER.next();       
             
             try {

@@ -1,13 +1,12 @@
 package dev.sara.views;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,7 +36,7 @@ public class HomeViewTest {
                 "13/08/2025",
                 "Un día más que aguanto sin llorar :)",
                 "4"
-        );
+            );
         System.setIn(new ByteArrayInputStream(inputSimulated.getBytes()));
 
         HomeView.printMenu();
