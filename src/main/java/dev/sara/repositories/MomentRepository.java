@@ -13,22 +13,19 @@ public class MomentRepository {
     private InterfaceDatabase db;
     private final Deque<Moment> momentStore = new LinkedList<>();
 
-    //Constructor privado para el sigleton
     private MomentRepository() {
         this.db = new DiaryDatabase();
     }
-    
 
     public static MomentRepository getInstance() {
         return MomentRepositorySingleton.getInstance();
     }
-    
-    public void StoreMoment(Moment moment) {
 
+    public void save(Moment moment) {
         db.store(moment);
         momentStore.push(moment);
     }
-
+    
     public List<Moment> findAll() {
         return (List<Moment>) momentStore;
     }

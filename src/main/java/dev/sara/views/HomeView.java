@@ -1,6 +1,7 @@
 package dev.sara.views;
 
 import dev.sara.models.Moment;
+import dev.sara.repositories.MomentRepository;
 
 public class HomeView extends View {
 
@@ -24,6 +25,9 @@ public class HomeView extends View {
 
        if (option == 1) {
         Moment newMoment = MomentPostView.createMoment();
+       }
+       if (option == 2) {
+        List<Moment> moments = MomentRepository.getInstance().findAll();
        }
     }
     
