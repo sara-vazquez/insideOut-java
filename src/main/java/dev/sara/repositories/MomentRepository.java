@@ -1,15 +1,15 @@
 package dev.sara.repositories;
 
-import dev.sara.contracts.InterfaceDatabase;
-import dev.sara.db.DiaryDatabase;
-import dev.sara.models.Moment;
+import dev.sara.db.*;
+import dev.sara.contracts.*;
+import dev.sara.models.*;
 
 public class MomentRepository {
 
     private InterfaceDatabase db;
 
     public MomentRepository() {
-        this.db = new DiaryDatabase();
+        this.db = new DiaryDatabaseTest();
     }
     
     public void StoreMoment(Moment moment) {
