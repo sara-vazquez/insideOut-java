@@ -20,8 +20,8 @@ public class DiaryDatabase implements InterfaceDatabase {
         }
 
         @Override
-        public 
-        List<Character> getAll() {
-            return characters 
+        public List<Moment> getAll() {
+            return moments; 
+        }
 }
 
