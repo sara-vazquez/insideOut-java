@@ -26,11 +26,11 @@ public class MomentRepository {
         momentStore.push(moment);
     }
     
-    public List<Moment> findAll() {
-        return (List<Moment>) momentStore;
+    public List<Moment> getAllMoments() {
+        return db.getAll();
     }
 
-    public Moment findLast() {
+   /* public Moment findLast() {
         if (momentStore.isEmpty()) {
             return null;
         }
@@ -42,6 +42,6 @@ public class MomentRepository {
             return null;
         }
         return momentStore.pop();
-    }
+    } */
 
 }
