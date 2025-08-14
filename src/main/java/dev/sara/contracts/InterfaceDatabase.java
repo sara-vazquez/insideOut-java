@@ -6,5 +6,5 @@ public interface InterfaceDatabase<E> {
     public void store(E element);
     List<E> getAll();
 
-    boolean delete(int index);
+   public void deleteMoment(int id);
 }

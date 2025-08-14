@@ -36,9 +36,8 @@ public class MomentController {
 
     }
 
-   /*  public void deleteMoment(MomentDTO momentDTO) {
-        Moment momentToDelete = MomentMapper.toEntity(momentDTO);
-        repository.delete(momentToDelete);
+    public void deleteMoment(int id) {
+        repository.deleteMoment(id);
 
-    }*/
+    }
 }

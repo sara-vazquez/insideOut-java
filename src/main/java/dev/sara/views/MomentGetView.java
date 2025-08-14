@@ -16,6 +16,6 @@ public class MomentGetView extends View {
                 System.out.println(moment.id() + ". Ocurrió el: " + moment.momentDate() + ". Título: " + moment.momentTitle()+ ". Descripción: " + moment.momentDescription() + ". Emoción: " + moment.emotion());
             }
         }
-        
+        HomeView.printMenu();
     }
 }

@@ -29,7 +29,7 @@ public class HomeView extends View {
     
        if (option == 2) CONTROLLER.getAllMoments();
 
-       if (option == 3);
+       if (option == 3) MomentDeleteView.printDeleteMoment();
        
     }
     

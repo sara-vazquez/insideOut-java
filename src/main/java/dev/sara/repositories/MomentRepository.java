@@ -49,8 +49,7 @@ public class MomentRepository {
         return momentStore.pop();
     }
 
-   /* public void delete(Moment moment) {
-        db.delete(moment);
-    }  */
-
+   public void deleteMoment(int id) {
+        db.deleteMoment(id);
+    } 
 }
