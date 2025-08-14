@@ -31,7 +31,6 @@ public class DiaryDatabase implements InterfaceDatabase<Moment> {
                     moments.remove(i);
                 }
             }
-          
         }
 }
 

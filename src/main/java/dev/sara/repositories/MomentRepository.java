@@ -52,4 +52,11 @@ public class MomentRepository {
    public void deleteMoment(int id) {
         db.deleteMoment(id);
     } 
+
+    public List<Moment> filterByEmotion(int emotionNumber) {
+        List<Moment> moments = new ArrayList<>(db.getAll());
+        return moments.stream()
+                    .filter(m -> m.getEmotion().getEmotionNumber() == emotionNumber)
+                    .toList();
+    }
 }

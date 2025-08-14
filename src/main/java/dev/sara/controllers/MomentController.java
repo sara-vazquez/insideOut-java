@@ -40,4 +40,21 @@ public class MomentController {
         repository.deleteMoment(id);
 
     }
+
+    public void filterByEmotion(int emotionNumber) {
+        List<MomentDTOResponse> momentsDTO = new ArrayList<>();
+        List<Moment> moments = repository.filterByEmotion(emotionNumber);
+
+        for (Moment moment : moments) {
+            momentsDTO.add(new MomentDTOResponse(
+                moment.getId(),
+                moment.getMomentTitle(),
+                moment.getMomentDescription(),
+                moment.getEmotion(),
+                moment.getMomentDate()
+            ));
+        }
+    
+        MomentGetView.viewAllMoments(momentsDTO);
+    }
 }
