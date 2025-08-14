@@ -9,7 +9,7 @@ public class MomentGetView extends View {
     public static void ViewAllMoments(List<MomentDTOResponse> moments) {
         System.out.println("Lista de momentos vividos:");
         for (MomentDTOResponse moment : moments) {
-            System.out.println(moment.id() + "Ocurrió el: " + moment.momentDate() + ". Título: " + moment.momentTitle()+ ". Descripción: " + moment.momentDescription() + ". Emoción: " + moment.emotion());
+            System.out.println(moment.id() + ". Ocurrió el: " + moment.momentDate() + ". Título: " + moment.momentTitle()+ ". Descripción: " + moment.momentDescription() + ". Emoción: " + moment.emotion());
         }
     }
 }

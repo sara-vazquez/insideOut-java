@@ -25,7 +25,7 @@ public class HomeView extends View {
 
         int option = SCANNER.nextInt();
 
-       if (option == 1) MomentPostView.createMoment();
+       if (option == 1) MomentPostView.printStoreMenu();
     
        if (option == 2) CONTROLLER.getAllMoments();
        

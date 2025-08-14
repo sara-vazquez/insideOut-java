@@ -22,6 +22,7 @@ public class MomentController {
     public void storeMoment(MomentDTO momentDTO) {
         Moment momentToSave = MomentMapper.toEntity(momentDTO);
         repository.save(momentToSave);
+        
     }
 
     public void getAllMoments() {

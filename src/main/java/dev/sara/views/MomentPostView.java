@@ -5,15 +5,15 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 import dev.sara.controllers.MomentController;
+import dev.sara.dtos.MomentDTO;
 import dev.sara.models.Emotion;
-import dev.sara.models.Moment;
 import dev.sara.singletons.MomentControllerSingleton;
 
 public class MomentPostView extends View {
     
     private static MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
-    public static  Moment createMoment() {
+    public static  void printStoreMenu() {
         System.out.println("Ingrese el título:");
         String momentTitle = SCANNER.next();
        
@@ -56,18 +56,13 @@ public class MomentPostView extends View {
         int emotionNumber = SCANNER.nextInt();
         SCANNER.nextLine();
 
-        Emotion emotion = Emotion.getEmotionByNumber(emotionNumber);
-        Moment newMoment = new Moment(momentTitle, momentDescription, emotion, momentDate);
+        Emotion emotion = Emotion.values()[emotionNumber - 1];
+        MomentDTO moment = new MomentDTO(1, momentTitle, momentDescription, emotion, momentDate);
+        CONTROLLER.storeMoment(moment);
 
-
-        System.out.println("--- Lista de momentos vividos ---");
-        System.out.printf("%d. Ocurrió el: %s. Título: %s. Descripción: %s. Emoción: %s%n",
-                          newMoment.getId(),
-                          newMoment.getMomentDate().format(formatter),
-                          newMoment.getMomentTitle(),
-                          newMoment.getMomentDescription(),
-                          newMoment.getEmotion().name());
-
-        return newMoment;
+        System.out.println("Momento añadido con éxito.");
+        HomeView.printMenu();
     }
+    
+    
 }
