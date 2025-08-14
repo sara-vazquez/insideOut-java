@@ -2,9 +2,9 @@ package dev.sara.contracts;
 
 import java.util.List;
 
-import dev.sara.models.Moment;
+public interface InterfaceDatabase<E> {
+    public void store(E element);
+    List<E> getAll();
 
-public interface InterfaceDatabase {
-    public void store(Moment moment);
-    public List<Moment> getAll();
+    boolean delete(int index);
 }

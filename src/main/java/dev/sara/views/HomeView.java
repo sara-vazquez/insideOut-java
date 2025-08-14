@@ -28,6 +28,8 @@ public class HomeView extends View {
        if (option == 1) MomentPostView.printStoreMenu();
     
        if (option == 2) CONTROLLER.getAllMoments();
+
+       if (option == 3);
        
     }
     
