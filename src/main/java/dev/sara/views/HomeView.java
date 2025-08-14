@@ -1,8 +1,11 @@
 package dev.sara.views;
 
 import dev.sara.controllers.MomentController;
+import dev.sara.singletons.MomentControllerSingleton;
 
 public class HomeView extends View {
+
+    private static MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
     public static void printMenu() {
 
@@ -22,13 +25,10 @@ public class HomeView extends View {
 
         int option = SCANNER.nextInt();
 
-       if (option == 1) {
-        MomentPostView.createMoment();
-       }
-       if (option == 2) {
-        MomentController.ViewAllMoments();
+       if (option == 1) MomentPostView.createMoment();
+    
+       if (option == 2) CONTROLLER.getAllMoments();
        
-       }
     }
     
 }

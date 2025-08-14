@@ -9,13 +9,4 @@ public class MomentMapper {
     return new Moment(dto.momentTitle(), dto.momentDescription(), dto.emotion(), dto.momentDate());
     }
 
-    public static MomentDTO toDTO(Moment moment) {
-        return new MomentDTO(
-            moment.getId(),
-            moment.getMomentTitle(),
-            moment.getMomentDescription(),
-            moment.getEmotion(),
-            moment.getMomentDate()
-        );
-    }
 }

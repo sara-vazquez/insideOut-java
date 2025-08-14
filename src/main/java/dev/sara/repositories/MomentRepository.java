@@ -13,7 +13,7 @@ public class MomentRepository {
     private InterfaceDatabase db;
     private final Deque<Moment> momentStore = new LinkedList<>();
 
-    private MomentRepository() {
+    public MomentRepository() {
         this.db = new DiaryDatabase();
     }
 
