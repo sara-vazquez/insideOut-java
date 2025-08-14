@@ -32,7 +32,7 @@ public class MomentPostView extends View {
         } while (momentDate == null);
         
         System.out.println("Ingrese la descripción:");
-        String momentDescription = SCANNER.next();
+        String momentDescription = SCANNER.nextLine();
 
         String text = """
                 Selecciona una emoción:

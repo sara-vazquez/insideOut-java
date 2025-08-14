@@ -1,16 +1,19 @@
 package dev.sara.repositories;
 
-import dev.sara.db.*;
-import dev.sara.contracts.*;
-import dev.sara.singletons.*;
-import dev.sara.models.*;
-import java.util.Deque; //para poder hacer LIFO
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
+import dev.sara.contracts.InterfaceDatabase;
+import dev.sara.db.DiaryDatabase; //para poder hacer LIFO
+import dev.sara.models.Moment;
+import dev.sara.singletons.MomentRepositorySingleton;
+
 public class MomentRepository {
 
-    private InterfaceDatabase db;
+    private InterfaceDatabase<Moment> db;
     private final Deque<Moment> momentStore = new LinkedList<>();
 
     public MomentRepository() {
@@ -27,21 +30,27 @@ public class MomentRepository {
     }
     
     public List<Moment> getAllMoments() {
-        return db.getAll();
+        List<Moment> moments = new ArrayList<>(db.getAll());
+        Collections.reverse(moments); //aquí actua LIFO
+        return moments;
     }
 
-   /* public Moment findLast() {
+   public Moment findLast() {
         if (momentStore.isEmpty()) {
             return null;
         }
         return momentStore.peek(); //para ver el último momento añadido
     }
     
-    public Moment deleteLast() {
+    public Moment delete() {
         if (momentStore.isEmpty()) {
             return null;
         }
         return momentStore.pop();
-    } */
+    }
+
+   /* public void delete(Moment moment) {
+        db.delete(moment);
+    }  */
 
 }

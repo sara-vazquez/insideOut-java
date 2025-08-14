@@ -22,7 +22,6 @@ public class MomentController {
     public void storeMoment(MomentDTO momentDTO) {
         Moment momentToSave = MomentMapper.toEntity(momentDTO);
         repository.save(momentToSave);
-        
     }
 
     public void getAllMoments() {
@@ -33,7 +32,13 @@ public class MomentController {
             momentsDTO.add(new MomentDTOResponse(moment.getId(), moment.getMomentTitle(), moment.getMomentDescription(), moment.getEmotion(), moment.getMomentDate()));
         }
 
-        MomentGetView.ViewAllMoments(momentsDTO);
+        MomentGetView.viewAllMoments(momentsDTO);
 
     }
+
+   /*  public void deleteMoment(MomentDTO momentDTO) {
+        Moment momentToDelete = MomentMapper.toEntity(momentDTO);
+        repository.delete(momentToDelete);
+
+    }*/
 }
