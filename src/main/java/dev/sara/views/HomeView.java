@@ -1,6 +1,6 @@
 package dev.sara.views;
 
-import dev.sara.models.Moment;
+import dev.sara.controllers.MomentController;
 
 public class HomeView extends View {
 
@@ -23,9 +23,10 @@ public class HomeView extends View {
         int option = SCANNER.nextInt();
 
        if (option == 1) {
-        Moment newMoment = MomentPostView.createMoment();
+        MomentPostView.createMoment();
        }
        if (option == 2) {
+        MomentController.ViewAllMoments();
        
        }
     }
