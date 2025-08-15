@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dev.sara.contracts.InterfaceDatabase;
-import dev.sara.models.Moment;
 import dev.sara.models.Emotion;
+import dev.sara.models.Moment;
 
-public class DiaryDatabase implements InterfaceDatabase{
+public class DiaryDatabase implements InterfaceDatabase<Moment>{
 
         private List<Moment> moments;
 

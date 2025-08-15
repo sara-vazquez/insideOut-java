@@ -1,10 +1,12 @@
 package dev.sara.views;
 
-import dev.sara.models.*;
-import dev.sara.controllers.*;
-import dev.sara.singletons.MomentControllerSingleton;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
+
+import dev.sara.controllers.MomentController;
+import dev.sara.models.Emotion;
+import dev.sara.models.Moment;
+import dev.sara.singletons.MomentControllerSingleton;
 
 
 public class FilterEmotionView extends View {
@@ -21,9 +23,10 @@ public class FilterEmotionView extends View {
         int option = SCANNER.nextInt();
         SCANNER.nextLine();
 
+        Emotion selectedEmotion = null;
         for (Emotion e : Emotion.values()) {
             if(e.getEmotionNumber() == option) {
-                selectedEmotion == e;
+                selectedEmotion = e;
                 break;
             }
         }
