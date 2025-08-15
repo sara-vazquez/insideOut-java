@@ -10,4 +10,5 @@ public interface InterfaceDatabase<T> {
 
    public void deleteMoment(int id);
    List<T> filterByEmotion(Emotion emotion);
+   List<T> filterByDate(int month, int year);
 }

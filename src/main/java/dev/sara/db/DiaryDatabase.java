@@ -44,5 +44,16 @@ public class DiaryDatabase implements InterfaceDatabase<Moment>{
             }
             return filtered;
         }
+
+        @Override
+        public List<Moment> filterByDate(int month, int year) {
+        List<Moment> filtered = new ArrayList<>();
+        for (Moment m : moments) {
+            if (m.getMomentDate().getMonthValue() == month && m.getMomentDate().getYear() == year) {
+                filtered.add(m);
+            }
+        }
+        return filtered;
+    }
 }
 
