@@ -7,7 +7,7 @@ import dev.sara.contracts.InterfaceDatabase;
 import dev.sara.models.Moment;
 import dev.sara.models.Emotion;
 
-public class DiaryDatabase implements InterfaceDatabase<Moment> {
+public class DiaryDatabase implements InterfaceDatabase{
 
         private List<Moment> moments;
 
@@ -16,7 +16,7 @@ public class DiaryDatabase implements InterfaceDatabase<Moment> {
         }
 
         @Override
-        public void store(Moment moment) {
+        public void store(Moment moment){
             moments.add(moment);
         }
 
@@ -35,7 +35,7 @@ public class DiaryDatabase implements InterfaceDatabase<Moment> {
         }
 
         @Override
-        public void filterByEmotion(Emotion emotion) {
+        public List<Moment> filterByEmotion(Emotion emotion) {
             List<Moment> filtered = new ArrayList<>();
             for (Moment m : moments) {
                 if (m.getEmotion() == emotion) {

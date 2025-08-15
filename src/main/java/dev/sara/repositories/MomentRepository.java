@@ -8,6 +8,7 @@ import java.util.List;
 
 import dev.sara.contracts.InterfaceDatabase;
 import dev.sara.db.DiaryDatabase; //para poder hacer LIFO
+import dev.sara.models.Emotion;
 import dev.sara.models.Moment;
 import dev.sara.singletons.MomentRepositorySingleton;
 
@@ -53,10 +54,7 @@ public class MomentRepository {
         db.deleteMoment(id);
     } 
 
-    public List<Moment> filterByEmotion(int emotionNumber) {
-        List<Moment> moments = new ArrayList<>(db.getAll());
-        return moments.stream()
-                    .filter(m -> m.getEmotion().getEmotionNumber() == emotionNumber)
-                    .toList();
+    public List<Moment> filterByEmotion(Emotion emotion) {
+        return db.filterByEmotion(emotion);
     }
 }

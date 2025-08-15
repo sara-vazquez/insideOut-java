@@ -31,7 +31,7 @@ public class HomeView extends View {
 
        if (option == 3) MomentDeleteView.printDeleteMoment();
 
-       if (option == 4) FilterView.;
+       if (option == 4) FilterView.printFilterMenu();
        
     }
     

@@ -2,37 +2,49 @@ package dev.sara.views;
 
 import dev.sara.models.*;
 import dev.sara.controllers.*;
-import dev.sara.singletons.*;
-import dev.sara.views.*;
+import dev.sara.singletons.MomentControllerSingleton;
+import java.util.List;
+import java.util.Collections;
 
 
 public class FilterEmotionView extends View {
 
     private static final MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
-    public static void printFilterMenu() {
-        Scanner scanner = new Scanner(System.in);
+    public static List<Moment> filterByEmotion() {
+        System.out.print("Seleccione una emoción: ");
 
-        String filterEmotion = """
-           Selecciona una emoción:
-            1. Alegría
-            2. Tristeza
-            3. Ira
-            4. Asco
-            5. Miedo
-            6. Ansiedad
-            7. Envidia
-            8. Vergüenza
-            9. Aburrimiento
-            10. Nostalgia
-            Ingrese su opción:
-             """;
+        for (Emotion e : Emotion.values()) {
+            System.out.println(e.getEmotionNumber() + ". " + e.name());
+        }
 
-        System.out.println(filterEmotion);
-        int option = scanner.nextInt();
+        int option = SCANNER.nextInt();
+        SCANNER.nextLine();
+
+        for (Emotion e : Emotion.values()) {
+            if(e.getEmotionNumber() == option) {
+                selectedEmotion == e;
+                break;
+            }
+        }
+
+        if (selectedEmotion == null) {
+            System.out.println("Opción inválida");
+            return Collections.emptyList();
+        }
+
+        List<Moment> filteredMoments = CONTROLLER.getMomentsByEmotion(selectedEmotion);
+
+        if (filteredMoments.isEmpty()) {
+            System.out.println("No hay momentos con esa emoción.");
+        } else {
+            System.out.println("Lista de momentos vividos:");
+            for (Moment m : filteredMoments) {
+                System.out.println(m.getId() + ". Ocurrió el: " + m.getMomentDate() + ". Título:" + m.getMomentTitle() + ". Descripción: " + m.getMomentDescription() + ". Emocion:" + m.getEmotion());
+            }
+        }
+
+        return filteredMoments;
     }
-
-    
-
    
 }

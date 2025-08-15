@@ -18,10 +18,11 @@ public class FilterView extends View {
     System.out.print(text);
     int option = SCANNER.nextInt();
 
-    if (option == 1) FilterEmotionView.printFilterMenu();
+    if (option == 1) FilterEmotionView.filterByEmotion();
     if (option == 2);
 
-    //HomeView.printMenu();
-    }
+    HomeView.printMenu();
+   
+}
 
 }
