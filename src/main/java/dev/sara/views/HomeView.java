@@ -32,6 +32,8 @@ public class HomeView extends View {
        if (option == 3) MomentDeleteView.printDeleteMoment();
 
        if (option == 4) FilterView.printFilterMenu();
+
+       if (option == 5); System.out.println("¡Hasta la próxima! 👋");
        
     }
     
