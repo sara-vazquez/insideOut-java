@@ -1,15 +1,19 @@
 package dev.sara.views;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+import static org.mockito.Mockito.mockStatic;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
 
 public class HomeViewTest {
 
@@ -17,41 +21,37 @@ public class HomeViewTest {
     private final PrintStream printStream = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
+    // Mock estático para la clase MomentPostView
+    private MockedStatic<MomentPostView> mockedMomentPostView;
+   
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         System.setOut(new PrintStream(outputStreamCaptor));
+        mockedMomentPostView = mockStatic(MomentPostView.class);
     }
 
     @Test
-    void testPrintMenu_SelectOption1() {
+    void testPrintMenu_Option1_MomentPostView() {
         
-        String momentTitleRequest = "Ingrese el título:";
-        String momentDateRequest = "Ingrese la fecha (dd/mm/year):";
-        String momentDescriptionRequest = "Ingrese la descripción";
-        String emotionNumberRequest = "Selecciona la emoción:";
-
-        String inputSimulated = String.join("\n",
-                "1",
-                "Sufriendo con java",
-                "13/08/2025",
-                "Un día más que aguanto sin llorar :)",
-                "4"
-            );
-        System.setIn(new ByteArrayInputStream(inputSimulated.getBytes()));
+        String input = "1\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        View.SCANNER = new Scanner(System.in);
 
         HomeView.printMenu();
 
-        String exit = outputStreamCaptor.toString();
+        mockedMomentPostView.verify(() -> MomentPostView.printStoreMenu());
 
-        assertThat(exit, containsString(momentTitleRequest));
-        assertThat(exit, containsString(momentDateRequest));
-        assertThat(exit, containsString(momentDescriptionRequest));
-        assertThat(exit, containsString(emotionNumberRequest));
+        assertThat(outputStreamCaptor.toString(), containsString("Seleccione una opción:"));
     }
 
     @AfterEach
-    void tearDown() {
+    public void tearDown() {
         System.setIn(inputPrintStream);
         System.setOut(printStream);
+        // Se cierra el mock estático después de cada test
+        mockedMomentPostView.close();
+        
+        // Cierra el scanner para evitar errores en otros tests
+        View.SCANNER.close(); 
     }
 }
