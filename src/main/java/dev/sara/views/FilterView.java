@@ -19,7 +19,7 @@ public class FilterView extends View {
     int option = SCANNER.nextInt();
 
     if (option == 1) FilterEmotionView.filterByEmotion();
-    if (option == 2);
+    if (option == 2) FilterDateView.filterByDate();
 
     HomeView.printMenu();
    
