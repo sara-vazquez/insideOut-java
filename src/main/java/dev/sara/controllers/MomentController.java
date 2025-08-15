@@ -6,8 +6,8 @@ import java.util.List;
 import dev.sara.dtos.MomentDTO;
 import dev.sara.dtos.MomentDTOResponse;
 import dev.sara.mappers.MomentMapper;
-import dev.sara.models.Moment;
 import dev.sara.models.Emotion;
+import dev.sara.models.Moment;
 import dev.sara.repositories.MomentRepository;
 import dev.sara.singletons.MomentRepositorySingleton;
 import dev.sara.views.MomentGetView;
@@ -44,5 +44,9 @@ public class MomentController {
 
     public List<Moment> getMomentsByEmotion(Emotion emotion) {
         return repository.filterByEmotion(emotion);
+    }
+
+    public List<Moment> getMomentsByDate(int month, int year) {
+        return repository.filterByDate(month, year);
     }
 }
