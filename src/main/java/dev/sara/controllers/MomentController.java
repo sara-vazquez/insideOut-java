@@ -7,6 +7,7 @@ import dev.sara.dtos.MomentDTO;
 import dev.sara.dtos.MomentDTOResponse;
 import dev.sara.mappers.MomentMapper;
 import dev.sara.models.Moment;
+import dev.sara.models.Emotion;
 import dev.sara.repositories.MomentRepository;
 import dev.sara.singletons.MomentRepositorySingleton;
 import dev.sara.views.MomentGetView;
@@ -41,20 +42,7 @@ public class MomentController {
 
     }
 
-    public void filterByEmotion(int emotionNumber) {
-        List<MomentDTOResponse> momentsDTO = new ArrayList<>();
-        List<Moment> moments = repository.filterByEmotion(emotionNumber);
-
-        for (Moment moment : moments) {
-            momentsDTO.add(new MomentDTOResponse(
-                moment.getId(),
-                moment.getMomentTitle(),
-                moment.getMomentDescription(),
-                moment.getEmotion(),
-                moment.getMomentDate()
-            ));
-        }
-    
-        MomentGetView.viewAllMoments(momentsDTO);
+    public List<Moment> getMomentsByEmotion(Emotion emotion) {
+        return repository.filterByEmotion(emotion);
     }
 }
