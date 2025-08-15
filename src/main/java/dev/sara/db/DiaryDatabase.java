@@ -5,6 +5,7 @@ import java.util.List;
 
 import dev.sara.contracts.InterfaceDatabase;
 import dev.sara.models.Moment;
+import dev.sara.models.Emotion;
 
 public class DiaryDatabase implements InterfaceDatabase<Moment> {
 
@@ -31,6 +32,17 @@ public class DiaryDatabase implements InterfaceDatabase<Moment> {
                     moments.remove(i);
                 }
             }
+        }
+
+        @Override
+        public void filterByEmotion(Emotion emotion) {
+            List<Moment> filtered = new ArrayList<>();
+            for (Moment m : moments) {
+                if (m.getEmotion() == emotion) {
+                    filtered.add(m);
+                }
+            }
+            return filtered;
         }
 }
 
