@@ -54,7 +54,7 @@ public class MomentPostView extends View {
         System.out.print(text);
 
         int emotionNumber = SCANNER.nextInt();
-        SCANNER.nextLine();
+        //SCANNER.nextLine();
 
         Emotion emotion = Emotion.values()[emotionNumber - 1];
         MomentDTO moment = new MomentDTO(1, momentTitle, momentDescription, emotion, momentDate);
