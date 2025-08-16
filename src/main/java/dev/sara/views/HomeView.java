@@ -5,7 +5,7 @@ import dev.sara.singletons.MomentControllerSingleton;
 
 public class HomeView extends View {
 
-    private static MomentController CONTROLLER = MomentControllerSingleton.getInstance();
+    private static final MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
     public static void printMenu() {
 

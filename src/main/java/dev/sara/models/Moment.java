@@ -26,6 +26,10 @@ public class Moment {
         this.modDate = LocalDateTime.now();
     }
 
+    public Moment(int i, String string, String string2, Emotion ansiedad, LocalDate date) {
+        //TODO Auto-generated constructor stub
+    }
+
     public int getId() {
         return id;
     }
