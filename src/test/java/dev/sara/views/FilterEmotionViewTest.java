@@ -56,16 +56,17 @@ public class FilterEmotionViewTest {
 
         assertThat(output, containsString("Lista de momentos vividos:"));
         assertThat(output, containsString("Ocurrió el: " + expectedDate));
-        assertThat(output, containsString("Seleccione una emoción: 1. ALEGRIA\n" +
-                        "2. TRISTEZA\n" + 
-                        "3. IRA\n" + 
-                        "4. ASCO\n" + 
-                        "5. MIEDO\n" + 
-                        "6. ANSIEDAD\n" + 
-                        "7. ENVIDIA\n" + 
-                        "8. VERGUENZA\n" + 
-                        "9. ABURRIMIENTO\n" + 
-                        "10. NOSTALGIA"));
+        assertThat(output, containsString("""
+                                          Seleccione una emoci\u00f3n: 1. ALEGRIA
+                                          2. TRISTEZA
+                                          3. IRA
+                                          4. ASCO
+                                          5. MIEDO
+                                          6. ANSIEDAD
+                                          7. ENVIDIA
+                                          8. VERGUENZA
+                                          9. ABURRIMIENTO
+                                          10. NOSTALGIA"""));
     }
 
     @AfterEach
