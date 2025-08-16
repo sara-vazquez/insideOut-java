@@ -11,7 +11,9 @@ import dev.sara.singletons.MomentControllerSingleton;
 
 public class MomentPostView extends View {
     
-    private static final MomentController CONTROLLER = MomentControllerSingleton.getInstance();
+    private static MomentController getController() {
+        return MomentControllerSingleton.getInstance();
+    }
 
     public static  void printStoreMenu() {
         System.out.println("Ingrese el título:");
@@ -58,8 +60,8 @@ public class MomentPostView extends View {
 
         Emotion emotion = Emotion.values()[emotionNumber - 1];
         MomentDTO moment = new MomentDTO(1, momentTitle, momentDescription, emotion, momentDate);
-        CONTROLLER.storeMoment(moment);
-
+        getController().storeMoment(moment);
+        
         System.out.println("Momento añadido con éxito.");
         HomeView.printMenu();
     }
