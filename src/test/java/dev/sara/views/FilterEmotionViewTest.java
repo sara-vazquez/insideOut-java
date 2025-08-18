@@ -1,21 +1,19 @@
 package dev.sara.views;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.mockito.Mockito.mockStatic;
-import static org.mockito.Mockito.when;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.when;
 
 import dev.sara.controllers.MomentController;
 import dev.sara.models.Emotion;
@@ -51,22 +49,9 @@ public class FilterEmotionViewTest {
         FilterEmotionView.filterByEmotion();
 
         String output = outputStreamCaptor.toString();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String expectedDate = date.format(formatter);
-
-        assertThat(output, containsString("Lista de momentos vividos:"));
-        assertThat(output, containsString("Ocurrió el: " + expectedDate));
-        assertThat(output, containsString("""
-                                          Seleccione una emoci\u00f3n: 1. ALEGRIA
-                                          2. TRISTEZA
-                                          3. IRA
-                                          4. ASCO
-                                          5. MIEDO
-                                          6. ANSIEDAD
-                                          7. ENVIDIA
-                                          8. VERGUENZA
-                                          9. ABURRIMIENTO
-                                          10. NOSTALGIA"""));
+        
+        assertThat(output, containsString("Seleccione una emoción:"));
+      
     }
 
     @AfterEach

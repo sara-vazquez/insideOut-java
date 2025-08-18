@@ -75,7 +75,7 @@ public class DiaryDatabaseTest {
         assertThat(august2025, hasSize(2));
         assertThat(august2025, hasItems(
             hasProperty("momentTitle", is("Cumpleaños")),
-            hasProperty("description", is("No fue tan bien"))
+            hasProperty("momentDescription", is("No fue tan bien"))
         ));
     }
 

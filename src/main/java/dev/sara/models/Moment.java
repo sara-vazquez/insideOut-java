@@ -15,6 +15,16 @@ public class Moment {
     private LocalDateTime creationDate;
     private LocalDateTime modDate;
 
+    public Moment(int id, String momentTitle, String momentDescription, Emotion emotion, LocalDate momentDate) {
+        this.id = id; 
+        this.momentTitle = momentTitle;
+        this.momentDescription = momentDescription;
+        this.emotion = emotion;
+        this.momentDate = momentDate;
+        this.creationDate = LocalDateTime.now();
+        this.modDate = LocalDateTime.now();
+    }
+
     public Moment(String momentTitle, String momentDescription, Emotion emotion, LocalDate momentDate) {
         this.id = nextId++;
         this.momentTitle = momentTitle;
@@ -24,10 +34,6 @@ public class Moment {
 
         this.creationDate = LocalDateTime.now();
         this.modDate = LocalDateTime.now();
-    }
-
-    public Moment(int i, String string, String string2, Emotion ansiedad, LocalDate date) {
-        //TODO Auto-generated constructor stub
     }
 
     public int getId() {
