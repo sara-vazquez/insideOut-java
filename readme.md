@@ -1,5 +1,16 @@
 ## Diagram
 ```mermaid
+---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#E2E882'
+    primaryTextColor: '#66693E'
+    primaryBorderColor: '#66693E'
+    lineColor: '#D1E8CF'
+    secondaryColor: '#D776E5'
+    tertiaryColor: '#635066'
+---
 classDiagram
 direction TB
     class HomeController {
@@ -172,3 +183,4 @@ direction TB
 
 ## Test
 ![test coverage](coverage-insideout.png)
+
