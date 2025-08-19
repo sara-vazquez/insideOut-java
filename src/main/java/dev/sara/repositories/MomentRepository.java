@@ -10,6 +10,7 @@ import dev.sara.contracts.InterfaceDatabase;
 import dev.sara.db.DiaryDatabase; //para poder hacer LIFO
 import dev.sara.models.Emotion;
 import dev.sara.models.Moment;
+import dev.sara.models.Mood;
 import dev.sara.singletons.MomentRepositorySingleton;
 
 public class MomentRepository {
@@ -60,5 +61,9 @@ public class MomentRepository {
 
     public List<Moment> filterByDate(int month, int year) {
         return db.filterByDate(month, year);
+    }
+
+    public List<Moment> filterByMood(Mood mood) {
+        return db.filterByMood(mood);
     }
 }

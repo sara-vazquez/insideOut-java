@@ -7,6 +7,7 @@ import java.time.format.DateTimeParseException;
 import dev.sara.controllers.MomentController;
 import dev.sara.dtos.MomentDTO;
 import dev.sara.models.Emotion;
+import dev.sara.models.Mood;
 import dev.sara.singletons.MomentControllerSingleton;
 
 public class MomentPostView extends View {
@@ -59,7 +60,7 @@ public class MomentPostView extends View {
         //SCANNER.nextLine();
 
         Emotion emotion = Emotion.values()[emotionNumber - 1];
-        MomentDTO moment = new MomentDTO(1, momentTitle, momentDescription, emotion, momentDate);
+        MomentDTO moment = new MomentDTO(1, momentTitle, momentDescription, emotion, momentDate, mood);
         getController().storeMoment(moment);
         
         System.out.println("Momento añadido con éxito.");

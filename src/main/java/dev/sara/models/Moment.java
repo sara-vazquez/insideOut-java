@@ -95,5 +95,12 @@ public class Moment {
     public void setModDate(LocalDateTime modDate) {
         this.modDate = modDate;
     }
+
+    public Mood getMood() {
+        return mood;
+    }
      
+    public void setMood(Mood mood) {
+        this.mood = mood;
+    }
 }

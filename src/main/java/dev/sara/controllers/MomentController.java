@@ -8,6 +8,7 @@ import dev.sara.dtos.MomentDTOResponse;
 import dev.sara.mappers.MomentMapper;
 import dev.sara.models.Emotion;
 import dev.sara.models.Moment;
+import dev.sara.models.Mood;
 import dev.sara.repositories.MomentRepository;
 import dev.sara.singletons.MomentRepositorySingleton;
 import dev.sara.views.MomentGetView;
@@ -30,7 +31,7 @@ public class MomentController {
         List<Moment> moments = repository.getAllMoments();
 
         for (Moment moment : moments) {
-            momentsDTO.add(new MomentDTOResponse(moment.getId(), moment.getMomentTitle(), moment.getMomentDescription(), moment.getEmotion(), moment.getMomentDate()));
+            momentsDTO.add(new MomentDTOResponse(moment.getId(), moment.getMomentTitle(), moment.getMomentDescription(), moment.getEmotion(), moment.getMomentDate(), moment.getMood()));
         }
 
         MomentGetView.viewAllMoments(momentsDTO);
@@ -48,5 +49,9 @@ public class MomentController {
 
     public List<Moment> getMomentsByDate(int month, int year) {
         return repository.filterByDate(month, year);
+    }
+
+    public List<Moment> getMomentsByMood(Mood mood) {
+        return repository.filterByMood(mood);
     }
 }
