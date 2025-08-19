@@ -14,8 +14,9 @@ public class Moment {
     private LocalDate momentDate;
     private LocalDateTime creationDate;
     private LocalDateTime modDate;
+    private Mood mood;
 
-    public Moment(int id, String momentTitle, String momentDescription, Emotion emotion, LocalDate momentDate) {
+    public Moment(int id, String momentTitle, String momentDescription, Emotion emotion, LocalDate momentDate, Mood mood) {
         this.id = id; 
         this.momentTitle = momentTitle;
         this.momentDescription = momentDescription;
@@ -23,14 +24,17 @@ public class Moment {
         this.momentDate = momentDate;
         this.creationDate = LocalDateTime.now();
         this.modDate = LocalDateTime.now();
+        this.mood = mood;
     }
 
-    public Moment(String momentTitle, String momentDescription, Emotion emotion, LocalDate momentDate) {
+    public Moment(String momentTitle, String momentDescription, Emotion emotion, LocalDate momentDate, Mood mood) {
         this.id = nextId++;
         this.momentTitle = momentTitle;
         this.momentDescription = momentDescription;
         this.emotion = emotion;
         this.momentDate = momentDate;
+        this.mood = mood;
+
 
         this.creationDate = LocalDateTime.now();
         this.modDate = LocalDateTime.now();

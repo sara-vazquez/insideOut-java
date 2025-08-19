@@ -12,6 +12,7 @@ public class FilterView extends View {
             Filtrar por...
             1. Emoción
             2. Fecha
+            3. Mood
             "Ingrese una opción: "
             """;
     
@@ -20,6 +21,7 @@ public class FilterView extends View {
 
     if (option == 1) FilterEmotionView.filterByEmotion();
     if (option == 2) FilterDateView.filterByDate();
+    if (option == 3);
 
     HomeView.printMenu();
    
