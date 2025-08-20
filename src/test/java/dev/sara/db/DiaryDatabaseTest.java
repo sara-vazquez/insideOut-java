@@ -18,6 +18,7 @@ import org.junit.jupiter.api.Test;
 
 import dev.sara.models.Emotion;
 import dev.sara.models.Moment;
+import dev.sara.models.Mood;
 
 public class DiaryDatabaseTest {
 
@@ -28,9 +29,9 @@ public class DiaryDatabaseTest {
         db = new DiaryDatabase();
 
         // Datos de prueba
-        db.store(new Moment(1, "Cumpleaños", "Fiesta con amigos", Emotion.ALEGRIA, LocalDate.of(2025, 8, 14)));
-        db.store(new Moment(2, "Entrega Proyecto Java", "No fue tan bien", Emotion.TRISTEZA, LocalDate.of(2025, 8, 10)));
-        db.store(new Moment(3, "Vacaciones", "Playa y sol", Emotion.ALEGRIA, LocalDate.of(2025, 7, 20)));
+        db.store(new Moment(1, "Cumpleaños", "Fiesta con amigos", Emotion.ALEGRIA, LocalDate.of(2025, 8, 14, Mood.BUENO)));
+        db.store(new Moment(2, "Entrega Proyecto Java", "No fue tan bien", Emotion.TRISTEZA, LocalDate.of(2025, 8, 10), Mood.MALO));
+        db.store(new Moment(3, "Vacaciones", "Playa y sol", Emotion.ALEGRIA, LocalDate.of(2025, 7, 20), Mood.BUENO));
     }
 
     @Test
