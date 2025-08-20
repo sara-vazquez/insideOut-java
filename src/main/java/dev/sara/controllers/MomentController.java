@@ -12,10 +12,11 @@ import dev.sara.models.Mood;
 import dev.sara.repositories.MomentRepository;
 import dev.sara.singletons.MomentRepositorySingleton;
 import dev.sara.views.MomentGetView;
+import dev.sara.services.MomentCSV;
 
 
 public class MomentController {
-    private MomentRepository repository;
+    private final MomentRepository repository;
 
     public MomentController() {
         this.repository = MomentRepositorySingleton.getInstance();
@@ -53,5 +54,9 @@ public class MomentController {
 
     public List<Moment> getMomentsByMood(Mood mood) {
         return repository.filterByMood(mood);
+    }
+
+    public void exportMomentsToCSV(List<Moment> momentsToExport, String filePath) {
+        MomentCSV.exportMomentCSV(momentsToExport, filePath);
     }
 }
