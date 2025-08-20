@@ -10,9 +10,9 @@ import dev.sara.models.Moment;
 
 public class MomentCSV {
 
-    public static exportMomentCSV(List<Moment> moments, String fileRoute) {
+    public static void exportMomentCSV(List<Moment> moments, String fileRoute) {
 
-        try (FileWriter writer = new FileWriter(null)) {
+        try (FileWriter writer = new FileWriter(fileRoute)) {
             writer.append("Fecha,Titulo,Descripción,Emoción,Mood\n");
 
             for(Moment moment : moments) {
@@ -21,9 +21,10 @@ public class MomentCSV {
                 writer.append(moment.getMomentTitle());
                 writer.append(",");
                 writer.append(moment.getMomentDescription());
-                writer.append(moment.getEmotion());
                 writer.append(",");
-                writer.append(moment.getMood());
+                writer.append(moment.getEmotion().name());
+                writer.append(",");
+                writer.append(moment.getMood().name());
                 writer.append("\n");
             }
             System.out.println("Archivo CSV generado exitosamente en: " + fileRoute);
