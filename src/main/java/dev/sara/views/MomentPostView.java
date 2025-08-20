@@ -60,11 +60,9 @@ public class MomentPostView extends View {
         //SCANNER.nextLine();
         Emotion emotion = Emotion.values()[emotionNumber - 1];
 
-        System.out.println("Ingrese el mood: ");
-        String moodInput = SCANNER.next();
-
         String textMood = """
                 Seleccione si el momento ha sido bueno o malo:
+                
                 1. Bueno
                 2. Malo
                 """;

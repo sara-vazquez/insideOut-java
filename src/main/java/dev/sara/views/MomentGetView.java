@@ -20,7 +20,7 @@ public class MomentGetView extends View {
             for (MomentDTOResponse moment : moments) {
         
                 String formattedDate = moment.momentDate().format(FORMATTER);
-                System.out.println(moment.id() + ". Ocurrió el: " + formattedDate + ". Título: " + moment.momentTitle()+ ". Descripción: " + moment.momentDescription() + ". Emoción: " + moment.emotion());
+                System.out.println(moment.id() + ". Ocurrió el: " + formattedDate + ". Título: " + moment.momentTitle()+ ". Descripción: " + moment.momentDescription() + ". Emoción: " + moment.emotion() + ". Mood: " + moment.mood());
             }
         }
         HomeView.printMenu();
