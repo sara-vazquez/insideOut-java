@@ -56,7 +56,8 @@ public class MomentController {
         return repository.filterByMood(mood);
     }
 
-    public void exportMomentsToCSV(List<Moment> momentsToExport, String filePath) {
-        MomentCSV.exportMomentCSV(momentsToExport, filePath);
+    public void exportAllMoments(String fileName) {
+        List <Moment> allMoments = repository.getAllMoments();
+        MomentCSV.exportMomentCSV(allMoments, fileName);
     }
 }
