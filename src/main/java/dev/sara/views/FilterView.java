@@ -21,7 +21,7 @@ public class FilterView extends View {
 
     if (option == 1) FilterEmotionView.filterByEmotion();
     if (option == 2) FilterDateView.filterByDate();
-    if (option == 3);
+    if (option == 3) FilterMoodView.filterByMood();
 
     HomeView.printMenu();
    

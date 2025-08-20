@@ -38,7 +38,7 @@ public class MomentPostView extends View {
         String momentDescription = SCANNER.next();
 
         String text = """
-                Selecciona una emoción:
+                Seleccione una emoción:
                 
                 1. Alegría
                 2. Tristeza
@@ -58,8 +58,21 @@ public class MomentPostView extends View {
 
         int emotionNumber = SCANNER.nextInt();
         //SCANNER.nextLine();
-
         Emotion emotion = Emotion.values()[emotionNumber - 1];
+
+        System.out.println("Ingrese el mood: ");
+        String moodInput = SCANNER.next();
+
+        String textMood = """
+                Seleccione si el momento ha sido bueno o malo:
+                1. Bueno
+                2. Malo
+                """;
+
+        System.out.println(textMood);
+        int moodNumber = SCANNER.nextInt();
+
+        Mood mood = Mood.values()[moodNumber - 1];
         MomentDTO moment = new MomentDTO(1, momentTitle, momentDescription, emotion, momentDate, mood);
         getController().storeMoment(moment);
         
