@@ -1,11 +1,11 @@
 package dev.sara.views;
 
-import dev.sara.controllers.MomentController;
-import dev.sara.singletons.MomentControllerSingleton;
+//import dev.sara.controllers.MomentController;
+//import dev.sara.singletons.MomentControllerSingleton;
 
 public class FilterView extends View {
 
-    private static MomentController CONTROLLER = MomentControllerSingleton.getInstance();
+   // private static MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
     public static void printFilterMenu() {
         String text = """

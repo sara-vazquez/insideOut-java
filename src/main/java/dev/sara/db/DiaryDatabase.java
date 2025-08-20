@@ -10,7 +10,7 @@ import dev.sara.models.Mood;
 
 public class DiaryDatabase implements InterfaceDatabase<Moment>{
 
-        private List<Moment> moments;
+        private final List<Moment> moments;
 
         public DiaryDatabase() {
             this.moments = new ArrayList<>();

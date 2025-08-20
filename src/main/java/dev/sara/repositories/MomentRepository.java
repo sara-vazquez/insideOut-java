@@ -15,7 +15,7 @@ import dev.sara.singletons.MomentRepositorySingleton;
 
 public class MomentRepository {
 
-    private InterfaceDatabase<Moment> db;
+    private final InterfaceDatabase<Moment> db;
     private final Deque<Moment> momentStore = new LinkedList<>();
 
     public MomentRepository() {
