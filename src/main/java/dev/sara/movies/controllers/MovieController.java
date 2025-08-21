@@ -19,15 +19,15 @@ import dev.sara.models.Emotion;
 
 public class MovieController {
     private final MovieRepositoryCSV repository;
-    private final MovieService apiService;
+    private final MovieService movieService;
 
     public MovieController() {
         this.repository = MovieRepositorySingleton.getInstance();
-        this.apiService = new MovieService(null);
+        this.movieService = new MovieService(null);
     }
 
-    public void addMovie(String name, Emotion emotion) {
-        MovieDTO movieDTO = apiService.findMovieByTitle(name);
+    public void addMovie(String imdbId, Emotion emotion) {
+        MovieDTO movieDTO = movieService.findMovieById(imdbId);
 
         if(movieDTO != null) {
             LocalDate creationDate = LocalDate.now();

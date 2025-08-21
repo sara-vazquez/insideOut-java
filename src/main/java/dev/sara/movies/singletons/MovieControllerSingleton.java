@@ -1,6 +1,6 @@
 package dev.sara.movies.singletons;
 
-import dev.sara.movies.controllers.MomentController;
+import dev.sara.movies.controllers.MovieController;
 
 public class MovieControllerSingleton {
     
