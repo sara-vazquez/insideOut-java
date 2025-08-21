@@ -15,6 +15,9 @@ public class shortInfoVO {
         public String[] getGenre() {
             return genre;
         }
+        public String getReleaseYear() {
+            return releaseYear;
+        }
     
         @Override
         public int hashCode() {
