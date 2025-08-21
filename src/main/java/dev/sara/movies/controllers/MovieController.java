@@ -1,8 +1,6 @@
 package dev.sara.movies.controllers;
 
 import java.time.LocalDate;
-import java.util.List;
-
 
 import dev.sara.movies.repositories.MovieRepositoryCSV;
 import dev.sara.movies.services.MovieService;
@@ -11,11 +9,6 @@ import dev.sara.movies.mappers.MovieMapper;
 import dev.sara.movies.dtos.MovieDTO;
 import dev.sara.movies.singletons.MovieRepositorySingleton;
 import dev.sara.models.Emotion; 
-
-
-
-
-
 
 public class MovieController {
     private final MovieRepositoryCSV repository;
@@ -40,6 +33,5 @@ public class MovieController {
         }
 
     }
-
 
 }
