@@ -3,17 +3,29 @@ package dev.sara.movies.repositories;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.ArrayList;
 
 import dev.sara.movies.models.Movie;
 
 public class MovieRepositoryCSV {
+
+    private List<Movie> movies;
+
+    public MovieRepositoryCSV() {
+        this.movies = new ArrayList<>();
+    }
+
+    public void save(Movie movie) {
+        this.movies.add(movie);
+        System.out.println("Película guardada en CSV: " + movie.getName());
+    }
     
-    public static void exportMoviesCSV(List<Movie> movies, String filePath) {
+    public void exportMoviesCSV(String filePath) {
 
         try (FileWriter writer = new FileWriter(filePath)) {
             writer.append("Título,Género/s,Emoción,Estreno,Creación\n");
 
-            for(Movie movie : movies) {
+            for(Movie movie : this.movies) {
                 writer.append(movie.getName());
                 writer.append(",");
                 writer.append(String.join("|", movie.getGenres()));

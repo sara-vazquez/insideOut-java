@@ -26,7 +26,7 @@ public class MovieController {
         this.movieService = new MovieService(null);
     }
 
-    public void addMovie(String imdbId, Emotion emotion) {
+    public void addMovieById(String imdbId, Emotion emotion) {
         MovieDTO movieDTO = movieService.findMovieById(imdbId);
 
         if(movieDTO != null) {
