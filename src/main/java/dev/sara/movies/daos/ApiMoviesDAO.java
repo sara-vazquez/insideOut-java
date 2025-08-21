@@ -5,6 +5,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
 
 public class ApiMoviesDAO implements InterfaceApiMovieDAO {
