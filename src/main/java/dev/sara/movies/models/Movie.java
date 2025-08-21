@@ -1,20 +1,22 @@
 package dev.sara.movies.models;
 
+import java.util.List;
+
 import dev.sara.models.Emotion;
 
 public class Movie {
     
     private int imdbId;
     private String name;
-    private String[] genre;
+    private List<String> genres;
     private Emotion emotion;
     private String releaseYear;
     private String creationDate;
 
-    public Movie(int imdbId, String name, String []genre, Emotion emotion, String releaseYear, String creationDate) {
+    public Movie(int imdbId, String name, List<String> genres, Emotion emotion, String releaseYear, String creationDate) {
         this.imdbId = imdbId; 
         this.name = name;
-        this.genre = genre;
+        this.genres = genres;
         this.emotion = emotion;
         this.releaseYear = releaseYear;
         this.creationDate = creationDate;
@@ -36,12 +38,12 @@ public class Movie {
         this.name = name;
     }
 
-    public String[] getGenre() {
-        return genre;
+    public List<String> getGenres() {
+        return genres;
     }
 
-    public void setGenre(String[] genre) {
-        this.genre = genre;
+    public void setGenres(List<String> genres) {
+        this.genres = genres;
     }
 
     public Emotion getEmotion() {
