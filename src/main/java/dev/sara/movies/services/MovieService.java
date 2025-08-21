@@ -12,7 +12,7 @@ import dev.sara.movies.dtos.MovieDTO;
 
 public class MovieService {
     
-    private ApiMoviesDAO movieDAO;
+    private final ApiMoviesDAO movieDAO;
 
     public MovieService(ApiMoviesDAO movieDAO) {
         this.movieDAO = movieDAO;

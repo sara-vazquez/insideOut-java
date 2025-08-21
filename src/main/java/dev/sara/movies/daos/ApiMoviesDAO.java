@@ -10,17 +10,13 @@ import java.util.concurrent.CompletableFuture;
 
 public class ApiMoviesDAO implements InterfaceApiMovieDAO {
 
-    private String url;
-
-    public ApiMoviesDAO() {
-        this.url = "https://imdb.iamidiotareyoutoo.com/search?tt=";
-    }
-
     @Override
     public String getMovie(String imdbId) {
 
+        String fullUrl = "https://imdb.iamidiotareyoutoo.com/search?tt=" + imdbId;
+
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url + imdbId))
+                .uri(URI.create(fullUrl))
                 .timeout(Duration.ofSeconds(10))
                 .header("Content-Type", "application/json")
                 .GET()
