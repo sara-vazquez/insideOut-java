@@ -3,7 +3,7 @@ package dev.sara.views;
 import dev.sara.controllers.MomentController;
 import dev.sara.singletons.MomentControllerSingleton;
 
-public class ExportView extends View {
+public class MomentExportView extends View {
     private static final MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
     public static void printExportMenu() {

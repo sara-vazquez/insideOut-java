@@ -17,13 +17,13 @@ public class MomentCSVRepository {
 
             for(Moment moment : moments) {
                 writer.append(moment.getMomentDate().toString());
-                writer.append(";");
+                writer.append(",");
                 writer.append(moment.getMomentTitle());
-                writer.append(";");
+                writer.append(",");
                 writer.append(moment.getMomentDescription());
-                writer.append(";");
+                writer.append(",");
                 writer.append(moment.getEmotion().name());
-                writer.append(";");
+                writer.append(",");
                 writer.append(moment.getMood().name());
                 writer.append("\n");
             }
