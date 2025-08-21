@@ -4,11 +4,12 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
+import dev.sara.models.Emotion;
 import dev.sara.movies.dtos.MovieDTO;
 import dev.sara.movies.models.Movie;
 
 public class MovieMapper {
-    public static Movie toEntity(MovieDTO dto) {
+    public static Movie toEntity(MovieDTO dto, Emotion emotion, LocalDate creationDate) {
 
         String name = dto.getShortInfo().getName();
         String[] genresArray = dto.getShortInfo().getGenre();
@@ -23,6 +24,6 @@ public class MovieMapper {
         } catch (NumberFormatException e) {
             // Por si el ID no es un número
         }
-        return new Movie(id, name, genresList, null, releaseYear, LocalDate.now().toString());
+        return new Movie(id, name, genresList, emotion, releaseYear, creationDate.toString());
     }
 }
