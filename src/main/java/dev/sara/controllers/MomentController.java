@@ -9,10 +9,10 @@ import dev.sara.mappers.MomentMapper;
 import dev.sara.models.Emotion;
 import dev.sara.models.Moment;
 import dev.sara.models.Mood;
+import dev.sara.repositories.MomentCSVRepository;
 import dev.sara.repositories.MomentRepository;
 import dev.sara.singletons.MomentRepositorySingleton;
 import dev.sara.views.MomentGetView;
-import dev.sara.services.MomentCSV;
 
 
 public class MomentController {
@@ -58,6 +58,6 @@ public class MomentController {
 
     public void exportAllMoments(String fileName) {
         List <Moment> allMoments = repository.getAllMoments();
-        MomentCSV.exportMomentCSV(allMoments, fileName);
+        MomentCSVRepository.exportMomentCSV(allMoments, fileName);
     }
 }

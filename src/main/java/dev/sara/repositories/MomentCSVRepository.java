@@ -1,4 +1,4 @@
-package dev.sara.services;
+package dev.sara.repositories;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import dev.sara.models.Moment;
 
 
 
-public class MomentCSV {
+public class MomentCSVRepository {
 
     public static void exportMomentCSV(List<Moment> moments, String filePath) {
 

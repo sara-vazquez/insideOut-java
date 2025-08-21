@@ -1,7 +1,7 @@
 package dev.sara.views;
 
-import dev.sara.singletons.MomentControllerSingleton;
 import dev.sara.controllers.MomentController;
+import dev.sara.singletons.MomentControllerSingleton;
 
 public class ExportView extends View {
     private static final MomentController CONTROLLER = MomentControllerSingleton.getInstance();
@@ -22,5 +22,8 @@ public class ExportView extends View {
         
         CONTROLLER.exportAllMoments(fileName);
         System.out.println("Exportación completada!");
+
+        HomeView.printMenu();
     }
+    
 }
