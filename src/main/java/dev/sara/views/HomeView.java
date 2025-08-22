@@ -1,6 +1,7 @@
 package dev.sara.views;
 
 import dev.sara.controllers.MomentController;
+import dev.sara.movies.views.MoviePostView;
 import dev.sara.singletons.MomentControllerSingleton;
 
 public class HomeView extends View {
@@ -17,7 +18,8 @@ public class HomeView extends View {
                 3. Eliminar un momento
                 4. Filtrar los momentos
                 5. Exportar a CSV
-                6. Salir
+                6. Añadir película
+                7. Salir
                 ----------------------
                 Seleccione una opción:
                 """;
@@ -36,7 +38,9 @@ public class HomeView extends View {
 
        if (option == 5) MomentExportView.printExportMenu();
 
-       if (option == 6) System.out.println("¡Hasta la próxima! 👋");
+       if (option == 6) MoviePostView.printStoreMovieMenu();
+
+       if (option == 7) System.out.println("¡Hasta la próxima! 👋");
        
     }
     
