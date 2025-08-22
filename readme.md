@@ -219,3 +219,8 @@ mvn test
 mvn test
 ```
 
+## Authors
+- Yolanda Alfonso
+- Sara Vázquez
+
+
