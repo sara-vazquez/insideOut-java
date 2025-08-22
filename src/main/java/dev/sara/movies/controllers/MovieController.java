@@ -32,7 +32,6 @@ public class MovieController {
         } else {
             System.out.println("No se encontró la peli. Inténtalo de nuevo.");
         }
-
     }
 
 }

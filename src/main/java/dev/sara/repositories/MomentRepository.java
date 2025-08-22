@@ -2,12 +2,12 @@ package dev.sara.repositories;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Deque;
+import java.util.Deque; //para poder hacer LIFO
 import java.util.LinkedList;
 import java.util.List;
 
 import dev.sara.contracts.InterfaceDatabase;
-import dev.sara.db.DiaryDatabase; //para poder hacer LIFO
+import dev.sara.db.DiaryDatabase; 
 import dev.sara.models.Emotion;
 import dev.sara.models.Moment;
 import dev.sara.models.Mood;
@@ -33,7 +33,7 @@ public class MomentRepository {
     
     public List<Moment> getAllMoments() {
         List<Moment> moments = new ArrayList<>(db.getAll());
-        Collections.reverse(moments); //aquí actua LIFO
+        Collections.reverse(moments); //aquí actua LIFO mirar Stack
         return moments;
     }
 
